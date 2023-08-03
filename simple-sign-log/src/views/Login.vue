@@ -46,11 +46,11 @@ export default {
       })
       let encrpytedData = EncryptData(userData)
       // console.log(userData, encrpytedData)
-      // ?redirecturi=http://localhost:3000/login
+      // ?redirecturi=http://hustmaths.top/ssolog/ok
       let redirectUri = this.$route.query.redirecturi
 
       axios({
-        url: 'http://localhost:8080/logi/login',
+        url: 'http://hustmaths.top/sso/logi/login',
         method: 'post',
         headers: {
           "Redirect": redirectUri

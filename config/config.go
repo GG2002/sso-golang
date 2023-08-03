@@ -1,6 +1,9 @@
 package config
 
-import "time"
+import (
+	"os"
+	"time"
+)
 
 var Cfg struct {
 	RSAPubKeyGBase string
@@ -9,7 +12,8 @@ var Cfg struct {
 }
 
 func init() {
-	Cfg.RSAPubKeyGBase = "C:/Users/77016/Desktop/HustmathsRecruit/sso-golang/utils/public.pem"
-	Cfg.RSAPriKeyGBase = "C:/Users/77016/Desktop/HustmathsRecruit/sso-golang/utils/private.pem"
+	curDir, _ := os.Getwd()
+	Cfg.RSAPubKeyGBase = curDir + "/utils/public.pem"
+	Cfg.RSAPriKeyGBase = curDir + "/utils/private.pem"
 	Cfg.TokenTimeout = 24 * time.Hour
 }

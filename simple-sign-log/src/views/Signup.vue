@@ -59,7 +59,7 @@ export default {
             // console.log(userData, encrpytedData)
 
             axios({
-                url: 'http://localhost:8080/sign/signup',
+                url: 'http://hustmaths.top/sso/sign/signup',
                 method: 'post',
                 data: encrpytedData,
             }).then(response => {
@@ -94,7 +94,7 @@ export default {
             // console.log(userData, encrpytedData)
 
             axios({
-                url: 'http://localhost:8080/sign/usernameexisted',
+                url: 'http://hustmaths.top/sso/sign/usernameexisted',
                 method: 'post',
                 data: encrpytedData,
             }).then(response => {

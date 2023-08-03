@@ -27,7 +27,7 @@ var db *DB
 
 func init() {
 	fmt.Println("Model init.")
-	dsn := "host=localhost user=oneecho password=1 dbname=hustmaths port=9920 sslmode=disable TimeZone=Asia/Shanghai"
+	dsn := "host=localhost user=oneecho password=1 dbname=hustmaths port=5432 sslmode=disable TimeZone=Asia/Shanghai"
 
 	sDB, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 	if err != nil {

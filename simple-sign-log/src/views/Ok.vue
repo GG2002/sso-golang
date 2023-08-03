@@ -50,7 +50,7 @@ export default {
         if ($cookies.isKey("sso_token")) {
             // 检验登录状态
             axios({
-                url: 'http://localhost:8080/logi/logcheck',
+                url: 'http://hustmaths.top/sso/logi/logcheck',
                 method: 'post',
                 withCredentials: true,
             }).then(response => {
@@ -75,12 +75,13 @@ export default {
             switch (this.logStatusStr) {
                 case "logIn":
                     axios({
-                        url: 'http://localhost:8080/logi/logout',
+                        url: 'http://hustmaths.top/sso/logi/logout',
                         method: 'post',
                         withCredentials: true,
                     }).then(response => {
                         console.log(response)
-                        window.location.href = "http://localhost:3000/"
+                        this.logStatusStr = "logOut"
+                        this.$router.push("ok")
                     }).catch(function (error) {
                         console.log(error);
                     });

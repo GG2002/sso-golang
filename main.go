@@ -14,13 +14,14 @@ import (
 func main() {
 	r := gin.Default()
 
-	gin.SetMode(gin.DebugMode)
+	gin.SetMode(gin.ReleaseMode)
 
 	r.Use(func(c *gin.Context) {
 		method := c.Request.Method
 		origin := c.Request.Header.Get("Origin")
+		log.Println(origin)
 		if origin != "" {
-			c.Header("Access-Control-Allow-Origin", "http://localhost:3000") // 可将将 * 替换为指定的域名
+			c.Header("Access-Control-Allow-Origin", "http://hustmaths.top") // 可将将 * 替换为指定的域名
 			c.Header("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE, UPDATE")
 			c.Header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization, Redirect")
 			c.Header("Access-Control-Expose-Headers", "Content-Length, Access-Control-Allow-Origin, Access-Control-Allow-Headers, Cache-Control, Content-Language, Content-Type, Redirect")
@@ -50,6 +51,5 @@ func main() {
 		logii.POST("/logcheck", logi.Logcheck)
 	}
 	r.POST("/getpubkey", utils.GetPubKey)
-
-	r.Run(":8080")
+	r.Run(":11451")
 }

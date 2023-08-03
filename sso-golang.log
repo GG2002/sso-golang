@@ -1,8 +1,4 @@
-rsa.go:140: {"username":"test","password":"1243456"}
-logi.go:30: user: test exists.
-logi.go:38: user: test log in successfully.
-model.go:80: redis: nil
-rsa.go:140: {"username":"test3中文","password":"1243456"}
-logi.go:30: user: test3中文 exists.
-logi.go:38: user: test3中文 log in successfully.
-model.go:80: redis: nil
+main.go:23: 
+main.go:23: 
+main.go:23: 
+main.go:23: 

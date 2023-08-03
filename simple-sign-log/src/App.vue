@@ -11,7 +11,7 @@ export default {
     if (!localStorage.getItem("rsaPubKey")) {
       // 获取公钥进行RSA加密
       await axios({
-        url: 'http://localhost:8080/getpubkey',
+        url: 'http://hustmaths.top/sso/getpubkey',
         method: 'post',
       }).then(response => {
         // console.log(response)
@@ -20,13 +20,10 @@ export default {
         console.log(error);
       });
     }
-    if (window.location == "http://localhost:3000/ok") {
-      return
-    }
     if ($cookies.isKey("sso_token")) {
       // 检验登录状态
       await axios({
-        url: 'http://localhost:8080/logi/logcheck',
+        url: 'http://hustmaths.top/sso/logi/logcheck',
         method: 'post',
         withCredentials: true,
       }).then(response => {
@@ -40,7 +37,7 @@ export default {
           if (this.$route.query.hasOwnProperty("redirecturi")) {
             window.location.href = this.$route.query.redirecturi + "?token=" + $cookies.get("sso_token")
           } else {
-            window.location.href = "http://localhost:3000/ok"
+            this.$router.push("ok")
           }
         }
       }).catch(function (error) {
